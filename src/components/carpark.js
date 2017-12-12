@@ -96,6 +96,13 @@ class CarparkView extends Component {
           </ul>
         </pre>
 
+        <Keys id="rk"
+          onUp={ () => { console.log(this.props); this.handlers.onUp() } }
+          onLeft={ this.handlers.onLeft }
+          onRight={ this.handlers.onRight }
+          onEnter={ this.handlers.onPlace }
+        />
+
         <h3>Current bus position:</h3>
         <pre>
           <b>X</b>{ this.props.busState.p.x !== null ? this.props.busState.p.x : '-' }
@@ -106,13 +113,6 @@ class CarparkView extends Component {
         <pre>
           <CarparkMap busState={this.props.busState} />
         </pre>
-
-        <Keys id="rk"
-          onUp={ () => { console.log(this.props); this.handlers.onUp() } }
-          onLeft={ this.handlers.onLeft }
-          onRight={ this.handlers.onRight }
-          onEnter={ this.handlers.onPlace }
-        />
 
       </div>
     )
